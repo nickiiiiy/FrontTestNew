@@ -1,12 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import registerReducer from "./slices/registerSlice";
-import authorizationReducer from "./slices/authorizationSlice"; // Добавьте эту строку
 
 export const store = configureStore({
   reducer: {
     register: registerReducer,
-    authorization: authorizationReducer, // И эту строку
+    // Добавьте другие редюсеры здесь, если у вас их больше одного
   },
 });
-
-export default store;
