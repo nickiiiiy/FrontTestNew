@@ -1,5 +1,21 @@
-export const UPDATE_LOGIN = "register/updateLogin";
-export const UPDATE_PASSWORD = "register/updatePassword";
-export const UPDATE_REPEAT_PASSWORD = "register/updateRepeatPassword";
-export const CLEAR_ERROR = "register/clearError";
-export const UPDATE_ERROR = "register/updateError";
+import axios from "../../axios";
+
+export const startAuthUser = () => {
+  return {
+    type: "AUTH_USER",
+  };
+};
+
+export const authSuccess = (payload) => {
+  return {
+    type: "AUTH_USER_SUCCESS",
+    payload,
+  };
+};
+
+export const authError = (error) => {
+  return {
+    type: "AUTH_USER_ERROR",
+    error,
+  };
+};

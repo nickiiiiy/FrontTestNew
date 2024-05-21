@@ -1,9 +1,10 @@
-import { configureStore } from "@reduxjs/toolkit";
-import registerReducer from "./slices/registerSlice";
+import { combineReducers } from "redux";
+import { registerReducer } from "./register";
+import { authReducer } from "./auth";
 
-export const store = configureStore({
-  reducer: {
-    register: registerReducer,
-    // Добавьте другие редюсеры здесь, если у вас их больше одного
-  },
+const rootReducer = combineReducers({
+  registration: registerReducer,
+  auth: authReducer,
 });
+
+export default rootReducer;
